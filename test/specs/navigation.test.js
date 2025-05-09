@@ -11,7 +11,7 @@ describe('Zappos Navigation Test', () => {
 it('should perform a Mens submenu  Navigation Test on the Zappos Website page',async () =>{
   await browser.url('https://www.zappos.com/')
   
-  await NavigationPage.NavmenuMen()
+  await NavigationPage.NavmenuMen();
 })
 })
 
@@ -28,6 +28,6 @@ describe('Zappos Navigation Test', () => {
     await browser.url('https://www.zappos.com/')
   
 
-    await this.NavigationPage.NavmenuWomen()
+      await NavigationPage.NavmenuWomen
   })
 })

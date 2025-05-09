@@ -1,23 +1,24 @@
+import {$,browser,expect} from '@wdio/globals'
 class NavigationPage {
 
 
 
-get NavmenuMen(){
-    return $('//a[data-shyguy="navMen"]');
+get NavMen(){
+    return $('//a[@data-shyguy="navMen"]');
 }
 
 get NavmenuMenShoesLinks(){
-    return $$('//ul[@data-component-name="subNavMenu"]');
+    return $('//ul[@data-component-name="subNavMenu"]/li/a');
 }
 
 
 get NavmenuMenClothing(){
-return $$('//ul[@data-component-name="subNavMenu"]/li');
+return $('//ul[@data-component-name="subNavMenu"]/li/a');
 
 }
 
 get NavmenuMenAccessories(){
-    return $$('//ul[[@data-component-name="subNavMenu"]/li')
+    return $('//ul[[@data-component-name="subNavMenu"]/li/a');
 }
 
 
@@ -28,13 +29,16 @@ get NavmenuMenAccessories(){
 
 
 async NavmenuMen(){
-    const  menulinks =[this.NavmenuMen,this.NavmenuMenShoesLinks,this.NavmenuMenClothing,this.NavmenuMenAccessories,]
+    const  menulinks =[this.NavMen,this.NavmenuMenShoesLinks,this.NavmenuMenClothing,this.NavmenuMenAccessories]
+    for (let index = 0; index < menulinks.length; index++) {
    
-     for (let index = 0; index < menulinks.length; index++) {
-        
-        await this.NavmenuMen
-     
-     } 
+    await this.NavMen.click();
+    await browser.pause(5000);
+    await this.NavmenuMenShoesLinks.click();
+    await this.NavmenuMenClothing.click();
+    await this.NavmenuMenAccessories.click();
+    await browser.pause(5000);
+} 
 
     }
 
@@ -47,7 +51,8 @@ return $('//span[@class="pointer-events-none"]');
  
 
 async NavmenuWomen(){
-
+ await this.NavWomenbutton.click();
+await this.NavWomen.click()
 
 
 }
