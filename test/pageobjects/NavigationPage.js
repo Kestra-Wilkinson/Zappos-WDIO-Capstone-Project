@@ -55,11 +55,10 @@ async validateNavigation(linkText){
         linkText = linkText.replace("All ", "");
     }*/
 
-    //We need to validate we have ended up in the right place. The Menu Items are coded into a script on each you visit.
+
     const scriptContent = await $('script').getText();
     expect(scriptContent.includes(linkText));
-    // The above two lines fixes the problem we had with expect(h1.toLowerCase()).toContain(linkText.toLowerCase());
-    
+   
     await browser.pause(10);
 }
    
