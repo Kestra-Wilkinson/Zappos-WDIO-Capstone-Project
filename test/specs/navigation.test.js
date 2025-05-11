@@ -1,4 +1,5 @@
 import NavigationPage from '../pageobjects/NavigationPage.js';
+
 const itemstoTest =[
 "All Men's Shoes", "Sneakers & Athletic", "Boots", "Loafers" , "Oxfords", "Sandals",
 "Slippers", "Hiking","Work & Safety Sneakers","Work & Duty Boots", "Adaptive", "Wide",
@@ -17,7 +18,7 @@ describe('Zappos Men Menu Navigation',() => {
 
    itemstoTest.forEach(linkText => {
           it(`should navigate to: ${linkText}`, async () => {
-             await NavigationPage.openMenMenu();
+            await NavigationPage.openMenMenu();
             await NavigationPage.clickMenuOptionByText(linkText);
             await NavigationPage.validateNavigation(linkText);
             await NavigationPage.openMenMenu();

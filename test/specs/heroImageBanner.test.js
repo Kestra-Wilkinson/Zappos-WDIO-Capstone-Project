@@ -1,5 +1,4 @@
-// import {$,browser,expect} from '@wdio/globals';
-// import HeroImagePage from '../pageobjects/HeroImagePage';
+import HeroImagePage from '../pageobjects/HeroImagePage';
 
 
 
@@ -8,11 +7,10 @@
 
 
 
-// describe('Zappos HeroImage Test',() =>{
+describe('Zappos HeroImage Test',() =>{
 
-//   it('should show the heroImage modal on the Zappos Website', async () =>{
-
-//     await browser.url('https://www.zappos.com/')
-//     await HeroImagePage
-// })
-// })
+  it('should show the heroImage modal on the Zappos Website', async () =>{
+    await HeroImagePage.openHomePage();
+    await HeroImagePage.validateHeroImageLoaded();
+});
+});

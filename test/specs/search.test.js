@@ -1,19 +1,24 @@
-// import {$,browser,expect} from '@wdio/globals';
-// import SearchPage from '../pageobjects/SearchPage';
+import SearchPage from '../pageobjects/SearchPage';
 
 
+describe('Zappos Search Tests', () => {
+    const tests =[
+        {term: 'Sports',valid:true},
+        {term: 'Sunglasses',valid:true},
+        {term: 'Mules',valid: true},
+        {term: 'Hiking', valid:true},
+        {term: 'NotOnThisWebsite123',valid:false }
+    ];
 
 
+         tests.forEach(({term, valid }) => {
+            it(`should ${valid ? 'return':'not return'} results for "${term}`,async () =>{
+                await SearchPage.performSearch(term);
+                await SearchPage.ValidateResults(term,valid);
+            })   
+        });
 
-// describe('Zappos Website Searchbar Functionality Test', () => {
+        
+ });
+    
 
-// it('should perform a searchbar test on Zappos Website and verify search Results',async () => {
-
-//   await browser.url('https://www.zappos.com/')
-  
-
-//    await SearchPage.searchTerms.searchTerms()
-
-
-// })
-// })
