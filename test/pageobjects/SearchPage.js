@@ -13,7 +13,12 @@ class SearchPage{
         await this.searchResultTitle.waitForExist({ timeout: 10});
      
     }
-
+  const tests =[
+        {term: 'Sports',valid:true},
+        {term: 'Sunglasses',valid:true},
+        {term: 'Mules',valid: true},
+        {term: 'Hiking', valid:true}
+    ];
     async ValidateResults(term,shouldFindResults =true) {
         const titleText =await this.searchResultTitle.getText();
         const countText =await this.searchcount.getText();
