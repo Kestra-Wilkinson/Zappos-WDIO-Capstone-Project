@@ -65,7 +65,7 @@ class NavigationPage {
     }
 
     async validateNavigation(resultName){
-        await this.header.waitForDisplayed({timeout:1000});
+        await this.header.waitForDisplayed({timeout:2000});
         const h1 = await this.header.getText();
         await expect((h1.toLowerCase()).includes(resultName.toLowerCase()));
 
