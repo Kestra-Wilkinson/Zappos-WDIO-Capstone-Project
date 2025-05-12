@@ -1,13 +1,5 @@
 import NavigationPage from '../pageobjects/NavigationPage.js';
 
-const itemstoTest =[
-"All Men's Shoes", "Sneakers & Athletic", "Boots", "Loafers" , "Oxfords", "Sandals",
-"Slippers", "Hiking","Work & Safety Sneakers","Work & Duty Boots", "Adaptive", "Wide",
-"All Men's Clothing", "Shirts & Tops", "Pants", "Coats & OuterWear", "Jeans",
-"Hoodies & SweatShirts", "Shorts", "Big & Tall", "ActiveWear", "Work & Duty Apparel", "Sleepwear",
-"All Men's Accessories", "Hats", "Bags","Belts","Watches","Sunglasses & Eyewear", 
-"Wallets","Gloves", "adidas", "Birkenstock","Brooks","Converse", "Hey Dude", "Merrell" , "The North Face"
-];
 
 const itemsandTerms = [
 {menuItem: "All Men's Shoes", resultName: "Men's Shoes"},
@@ -51,7 +43,6 @@ const itemsandTerms = [
 
 ]
 
-
 describe('Zappos Men Menu Navigation',() => {
    before(async () => {
  
@@ -62,7 +53,6 @@ describe('Zappos Men Menu Navigation',() => {
             await NavigationPage.openMenMenu();
             await NavigationPage.clickMenuOptionByText(menuItem,resultName);
             await NavigationPage.validateNavigation(resultName);
-            await NavigationPage.openMenMenu();
           });
      });  
  });

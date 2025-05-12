@@ -1,16 +1,11 @@
 class SearchPage{
 
-get searchInput()  {return $('//input[@id="searchAll"]');}
-get searchButton() {return $('//button[@type="submit"]');}
-get searchResultTitle() {return $('h1');}
-get searchcount() {return $('.ht-z');}
-
-
-
-
+    get searchInput()  {return $('//input[@id="searchAll"]');}
+    get searchButton() {return $('//button[@type="submit"]');}
+    get searchResultTitle() {return $('h1');}
+    get searchcount() {return $('.ht-z');}
 
     async performSearch(term){
-        //Remove later as browser is actually opened during the nav test
         await browser.url('https://www.zappos.com/');
         await this.searchInput.waitForClickable({  timeout: 10 });
         await this.searchInput.setValue(term);
@@ -19,11 +14,7 @@ get searchcount() {return $('.ht-z');}
      
     }
 
-
-
-
     async ValidateResults(term,shouldFindResults =true) {
-        //await browser.url('https://www.zappos.com/')
         const titleText =await this.searchResultTitle.getText();
         const countText =await this.searchcount.getText();
         const match =countText.match(/\d+/);
