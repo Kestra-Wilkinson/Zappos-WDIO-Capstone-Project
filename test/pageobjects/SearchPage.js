@@ -13,7 +13,7 @@ class SearchPage{
         await this.searchResultTitle.waitForExist({ timeout: 10});
      
     }
-  const tests =[
+   tests =[
         {term: 'Sports',valid:true},
         {term: 'Sunglasses',valid:true},
         {term: 'Mules',valid: true},

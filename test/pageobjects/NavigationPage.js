@@ -14,7 +14,7 @@ class NavigationPage {
         await this.NavMen.click();
     
     }
-const itemsandTerms = [
+ itemsandTerms = [
 {menuItem: "All Men's Shoes", resultName: "Men's Shoes"},
 {menuItem: "Sneakers & Athletic", resultName: "Men's Sneakers & Athletic Shoes"},
 {menuItem: "Boots", resultName: "Men's Boots"},
