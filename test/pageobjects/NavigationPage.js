@@ -31,7 +31,7 @@ async openMenMenu() {
     await browser.url('https://www.zappos.com/')
     await this.NavMen.waitForClickable({timeout:10});
     await this.NavMen.click();
-    await browser.pause(1000);
+ 
 }
 
 async clickMenuOptionByText(linkText) {
@@ -40,7 +40,7 @@ async clickMenuOptionByText(linkText) {
     await expect(link).toHaveText(linkText);
     await link.waitForClickable({timeout: 1000});    
     await link.click();
-    await browser.pause(1000);
+    
 }
 
 async validateNavigation(resultName){
@@ -54,15 +54,9 @@ async validateNavigation(resultName){
     const resultcount =match ? parseInt(match[0]) : 0;
 
     expect(resultcount).toBeGreaterThan(1);
-    
-    /*if (linkText.includes("All ")) {
-        linkText = linkText.replace("All ", "");
-    }*/
 
     await expect((h1.toLowerCase()).includes(resultName.toLowerCase()));
 
-    //const scriptContent = await $('script').getText();
-    //expect(scriptContent.includes(linkText));
 }
    
 }

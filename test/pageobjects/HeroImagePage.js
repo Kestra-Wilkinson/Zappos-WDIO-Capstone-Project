@@ -6,8 +6,8 @@ get HeroImage(){ return $('img');}
 
    async openHomePage() {
    await browser.url('https://www.zappos.com/')
-   await this.HeroImageBanner.waitForDisplayed({timeout:10000});
-   await browser.pause(2000);
+   await this.HeroImageBanner.waitForDisplayed({timeout:1000});
+
 }
 
   

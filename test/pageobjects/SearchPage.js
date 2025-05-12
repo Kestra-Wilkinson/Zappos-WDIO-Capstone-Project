@@ -16,7 +16,7 @@ get searchcount() {return $('.ht-z');}
         await this.searchInput.setValue(term);
         await this.searchButton.click();
         await this.searchResultTitle.waitForExist({ timeout: 10});
-        await browser.pause(3000);
+     
     }
 
 
