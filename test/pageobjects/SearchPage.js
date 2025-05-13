@@ -4,14 +4,19 @@ class SearchPage{
     get searchButton() {return $('//button[@type="submit"]');}
     get searchResultTitle() {return $('h1');}
     get searchcount() {return $('.ht-z');}
-
+    get searchremoveButton(){
+    return $('.si-z')}
+   
+    
     async performSearch(term){
         await browser.url('https://www.zappos.com/');
-        await this.searchInput.waitForClickable({  timeout: 10 });
+        await this.searchInput.waitForClickable({  timeout: 1000 });
         await this.searchInput.setValue(term);
         await this.searchButton.click();
-        await this.searchResultTitle.waitForExist({ timeout: 10});
-     
+        await this.searchResultTitle.waitForExist({ timeout: 1000});
+    }
+        async clearsearch(){
+        await this.searchremoveButton.click();
     }
    tests =[
         {term: 'Sports',valid:true},
@@ -32,6 +37,6 @@ class SearchPage{
             expect(resultcount).toBe(0);
             }
         }   
-}
 
+ }
 export default  new SearchPage;

@@ -2,19 +2,16 @@ import {$,browser,expect} from '@wdio/globals'
 class NavigationPage {
 
     get header() { return $('h1');}
-    get resultcount(){return $('.ht-z')}
+    get resultcount(){return $('.ht-z');}
 
     get NavMen(){
         return $('//a[@data-shyguy="navMen"]');
     }
+    get NavMenclosebutton(){
+    return $('//button[@aria-label="Close Men Menu"]');}
 
-    async openMenMenu() {
-        await browser.url('https://www.zappos.com/')
-        await this.NavMen.waitForClickable({timeout:1000});
-        await this.NavMen.click();
-    
-    }
- itemsandTerms = [
+
+itemsandTerms = [
 {menuItem: "All Men's Shoes", resultName: "Men's Shoes"},
 {menuItem: "Sneakers & Athletic", resultName: "Men's Sneakers & Athletic Shoes"},
 {menuItem: "Boots", resultName: "Men's Boots"},
@@ -56,16 +53,25 @@ class NavigationPage {
 
 ]
 
+async openMenMenu() {
+    await browser.url('https://www.zappos.com/')
+    await this.NavMen.waitForClickable({timeout:1000});
+    await this.NavMen.click();
+
+}
+    async closeMenmenu(){
+        await this.NavMenclosebutton.click();   
+}
     async clickMenuOptionByText(linkText) {
         const link = await $("="+linkText);
         await expect(link).toHaveText(linkText);
-        await link.waitForClickable({timeout: 2000});    
+        await link.waitForClickable({timeout:1000});    
         await link.click();
-        
+       
     }
 
     async validateNavigation(resultName){
-        await this.header.waitForDisplayed({timeout:2000});
+        await this.header.waitForDisplayed({timeout:3000});
         const h1 = await this.header.getText();
         await expect((h1.toLowerCase()).includes(resultName.toLowerCase()));
 
