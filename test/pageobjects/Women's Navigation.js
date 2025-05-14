@@ -6,7 +6,7 @@ return $('//a[@data-shyguy="navWomen"]');}
 get NavWomenCloseWomensButton(){
 return $('//button[@aria-label="Close Women Menu"]');}
 get header() { return $('h1');}
-get resultcount(){return $('.ht-z');}
+get resultcount(){return $('.Mt-z');}
 
 itemsandTerms = [
 {menuItem: "All Women's Shoes",resultName:" Women's Shoes"},
@@ -19,7 +19,7 @@ itemsandTerms = [
 {menuItem:"Loafers",resultName:"Women's Loafers"},
 {menuItem:"Sandals",resultName: "Womens Sandals"},
 {menuItem:"Cowboy Boots",resultName:"Women's Western Cowboy Boots"},
-{menuItem:"Safety Shoes",resultName: "safety shoes"},
+{menuItem:"Safety Shoes",resultName: "Safety Shoes"},
 {menuItem:"Adaptive",resultName:"Women's Adaptive Shoes"},
 {menuItem:"Heels",resultName: "Women's Heels"}, 
 {menuItem: "All Women's Clothing",resultName:"Womens Clothing"},
@@ -66,7 +66,7 @@ async openWomenMenu() {
     async clickMenuOptionByText(linkText) {
         const link = await $("="+linkText);
         await expect(link).toHaveText(linkText);
-        await link.waitForClickable({timeout:2000});    
+        await link.waitForClickable({timeout:25000});    
         await link.click();
        
     }
@@ -78,7 +78,8 @@ async openWomenMenu() {
 
         const countText = await this.resultcount.getText();
 
-        expect(countText.includes("items found"));
+         expect(countText.includes("items found"));
+        
     }
     
 

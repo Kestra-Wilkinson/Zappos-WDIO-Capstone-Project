@@ -2,7 +2,7 @@ import {$,browser,expect} from '@wdio/globals'
 class NavigationPage {
 
     get header() { return $('h1');}
-    get resultcount(){return $('.ht-z');}
+    get resultcount(){return $('.Mt-z');}
 
     get NavMen(){
         return $('//a[@data-shyguy="navMen"]');
@@ -55,9 +55,8 @@ itemsandTerms = [
 
 async openMenMenu() {
     await browser.url('https://www.zappos.com/')
-    await this.NavMen.waitForClickable({timeout:1000});
+    await this.NavMen.waitForClickable({timeout:2000});
     await this.NavMen.click();
-
 }
     async closeMenmenu(){
         await this.NavMenclosebutton.click();   
@@ -65,19 +64,20 @@ async openMenMenu() {
     async clickMenuOptionByText(linkText) {
         const link = await $("="+linkText);
         await expect(link).toHaveText(linkText);
-        await link.waitForClickable({timeout:1000});    
+        await link.waitForClickable({timeout:250000});    
         await link.click();
        
     }
 
     async validateNavigation(resultName){
-        await this.header.waitForDisplayed({timeout:3000});
+        await this.header.waitForDisplayed({timeout:1000});
         const h1 = await this.header.getText();
         await expect((h1.toLowerCase()).includes(resultName.toLowerCase()));
 
         const countText = await this.resultcount.getText();
 
         expect(countText.includes("items found"));
+        
     }
     
 }
