@@ -35,7 +35,24 @@ itemsandTerms = [
 {menuItem:  "Sleepwear", resultName: "Women's Sleepwear"},
 {menuItem: "Coats & Outerwear",resultName:  "Women's Coats & Outerwear"},
 {menuItem:  "Plus Size",resultName: "Women's Plus Size Clothing"},
-{menuItem:  "Work & Duty Apparel",resultName:"Women's Work & Duty Clothing"}
+{menuItem:  "Work & Duty Apparel",resultName:"Women's Work & Duty Clothing"},
+{menuItem:  "All Women's Accessories",resultName: "Women's Accessories"},
+{menuItem:"Handbags",resultName: "handbags"},
+{menuItem:"Backpacks",resultName: "Women's Backpacks"},
+{menuItem:"Wallets",resultName: "Women's Wallets"},
+{menuItem:"Sunglasses",resultName: "Women's Sunglasses"},
+{menuItem:"Hats",resultName:"Women's Hats"},
+{menuItem:"Scarves",resultName:"Women's Scarves"},
+{menuItem:"Jewelry",resultName:"Women's Jewelry"},
+{menuItem:"Belts",resultName:"Women's Belts"},
+{menuItem:"Birkenstock",resultName:"Women's Birkenstock Products"},
+{menuItem:"Brooks",resultName:"Women's Brooks Products"},
+{menuItem:"Hoka",resultName: "Women's Hoka Products"},
+{menuItem: "Madewell" ,resultName:"Women's Madewell Products"},
+{menuItem: "New Balance" ,resultName: "Women"},
+{menuItem:"Nike",resultName: "Women's Nike Products"},
+{menuItem:"On", resultName: "Women's On Products"},
+{menuItem:"Sam Edelman" ,resultName:"Women's Sam Edelman Products"}
 ]
 async openWomenMenu() {
     await browser.url('https://www.zappos.com/')
