@@ -9,6 +9,6 @@ class HeroImagePage {
       await browser.url('https://www.zappos.com/')
       await this.HeroImageBanner.waitForDisplayed({timeout:1000});
    }
-   
+  
 }
 export default new HeroImagePage;
