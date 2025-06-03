@@ -44,7 +44,13 @@ itemsandTerms = [
 {menuItem:"Big Kid (7-12 yrs.)",resultName:"Shoes"},
 {menuItem:"Little Kid (4-7 yrs.)",resultName:"Shoes"},
 {menuItem:"Toddler (9 mos.-4 yrs.)",resultName:"Shoes"},
-{menuItem: "Infant (0-9 mos.)",resultName:"Shoes"}
+{menuItem: "Infant (0-9 mos.)",resultName:"Shoes"},
+{menuItem: "All New Arrivals",resultName: "kids"},
+{menuItem:"Kids' Athletic Shoes",resultName:"Kids Athletic Shoes"},
+{menuItem:"Easy On Shoes",resultName:"Easy On Kids Shoes"},
+{menuItem:"Sports Cleats",resultName:"Kids Cleats"},
+{menuItem:"Character Favorites",resultName:"Shoes"},
+{menuItem:"Kids' Sale",resultName:"Kids On Sale Products"}
 ]
 
 async openKidsMenu(){
