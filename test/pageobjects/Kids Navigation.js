@@ -37,13 +37,15 @@ itemsandTerms = [
 {menuItem:"Coats & Jackets",resultName:"Girls Coats & Outerwear"},
 {menuItem:"Boots",resultName: "Girls Boots"},
 {menuItem:"Pajamas",resultName:"Girls Sleepwear" },
-{menuItem:"Adaptive",resultName:"Girls Adaptive Products"}
-
-
-
-
+{menuItem:"Adaptive",resultName:"Girls Adaptive Products"},
+{menuItem:"All Kids' Accessories",resultName:"Kids Accessories"},
+{menuItem:"Backpacks",resultName:"Kids Backpacks"},
+{menuItem:"Hats",resultName: "Kids Hats"},
+{menuItem:"Big Kid (7-12 yrs.)",resultName:"Shoes"},
+{menuItem:"Little Kid (4-7 yrs.)",resultName:"Shoes"},
+{menuItem:"Toddler (9 mos.-4 yrs.)",resultName:"Shoes"},
+{menuItem: "Infant (0-9 mos.)",resultName:"Shoes"}
 ]
-
 
 async openKidsMenu(){
 await browser.url('https://www.zappos.com/')
@@ -52,21 +54,21 @@ await this.KidsNav.click();
 }
 
 async clickMenuOptionByText(linkText) {
-    const link = await $("="+linkText);
-    await expect(link).toHaveText(linkText);
-    await link.waitForClickable({timeout:1000});    
-    await link.click();
-    
+const link = await $("="+linkText);
+await expect(link).toHaveText(linkText);
+await link.waitForClickable({timeout:1000});    
+await link.click();
+
 }
 
 async validateNavigation(resultName){
-    await this.header.waitForDisplayed({timeout:1000});
-    const h1 = await this.header.getText();
-    await expect((h1.toLowerCase()).includes(resultName.toLowerCase()));
+await this.header.waitForDisplayed({timeout:1000});
+const h1 = await this.header.getText();
+await expect((h1.toLowerCase()).includes(resultName.toLowerCase()));
 
-    const countText = await this.resultcount.getText();
+const countText = await this.resultcount.getText();
 
-    expect(countText.includes("items found"));
+expect(countText.includes("items found"));
 }
 
 }
