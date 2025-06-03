@@ -1,9 +1,10 @@
+import {$,browser,expect} from '@wdio/globals'
 class SearchPage{
 
     get searchInput()  {return $('//input[@id="searchAll"]');}
     get searchButton() {return $('//button[@type="submit"]');}
     get searchResultTitle() {return $('h1');}
-    get searchcount() {return $('.ut-z');}
+    get searchcount() {return $('.yu-z');}
 
    
     searchHistoryXbutton(searchItem){
@@ -11,10 +12,10 @@ class SearchPage{
     }
     async performSearch(term){
         await browser.url('https://www.zappos.com/');
-        await this.searchInput.waitForClickable({  timeout: 10000});
+        await this.searchInput.waitForClickable({  timeout: 1000});
         await this.searchInput.setValue(term);
         await this.searchButton.click();
-        await this.searchResultTitle.waitForExist({ timeout: 20000});
+        await this.searchResultTitle.waitForExist({ timeout: 2000});
     }
         async clearsearch(){
      

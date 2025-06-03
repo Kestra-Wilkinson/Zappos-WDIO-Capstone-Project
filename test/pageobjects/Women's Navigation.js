@@ -7,7 +7,7 @@ return $('//a[@data-shyguy="navWomen"]');}
 get NavWomenCloseWomensButton(){
 return $('//button[@aria-label="Close Women Menu"]');}
 get header() { return $('h1');}
-get resultcount(){return $('.Vt-z');}
+get resultcount(){return $('.yu-z');}
 
 itemsandTerms = [
 {menuItem: "All Women's Shoes",resultName:" Women's Shoes"},
@@ -20,7 +20,7 @@ itemsandTerms = [
 {menuItem:"Loafers",resultName:"Women's Loafers"},
 {menuItem:"Sandals",resultName: "Womens Sandals"},
 {menuItem:"Cowboy Boots",resultName:"Women's Western Cowboy Boots"},
-{menuItem:"Composite Toe",resultName:"composite toe"},
+{menuItem:"Composite Toe",resultName:"Composite Toe"},
 {menuItem:"Safety Shoes",resultName: "Safety Shoes"},
 {menuItem:"Adaptive",resultName:"Women's Adaptive Shoes"},
 {menuItem:"Heels",resultName: "Women's Heels"}, 
@@ -39,7 +39,7 @@ itemsandTerms = [
 {menuItem:  "Plus Size",resultName: "Women's Plus Size Clothing"},
 {menuItem:  "Work & Duty Apparel",resultName:"Women's Work & Duty Clothing"},
 {menuItem:  "All Women's Accessories",resultName: "Women's Accessories"},
-{menuItem:"Handbags",resultName: "handbags"},
+{menuItem:"Handbags",resultName: "Handbags"},
 {menuItem:"Backpacks",resultName: "Women's Backpacks"},
 {menuItem:"Wallets",resultName: "Women's Wallets"},
 {menuItem:"Sunglasses",resultName: "Women's Sunglasses"},
@@ -68,13 +68,13 @@ async openWomenMenu() {
     async clickMenuOptionByText(linkText) {
         const link = await $("="+linkText);
         await expect(link).toHaveText(linkText);
-        await link.waitForClickable({timeout:10000});    
+        await link.waitForClickable({timeout:2000});    
         await link.click();
        
     }
 
     async validateNavigation(resultName){
-        await this.header.waitForDisplayed({timeout:10000});
+        await this.header.waitForDisplayed({timeout:1000});
         const h1 = await this.header.getText();
         await expect((h1.toLowerCase()).includes(resultName.toLowerCase()));
 

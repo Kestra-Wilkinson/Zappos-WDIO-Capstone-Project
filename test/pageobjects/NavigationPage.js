@@ -2,7 +2,7 @@ import {$,browser,expect} from '@wdio/globals'
 class NavigationPage {
 
     get header() { return $('h1');}
-    get resultcount(){return $('.ut-z');}
+    get resultcount(){return $('.yu-z');}
 
     get NavMen(){
         return $('//a[@data-shyguy="navMen"]');
@@ -49,6 +49,7 @@ itemsandTerms = [
 {menuItem: "Converse", resultName: "Men's Converse Shoes"},
 {menuItem: "Hey Dude", resultName: "Men's Hey Dude Products"},
 {menuItem: "Merrell", resultName: "Men's Merrell Shoes"},
+{menuItem: "Nike",resultName:"Men's Nike Products"},
 {menuItem: "The North Face", resultName: "Men's The North Face Products"}
 
 ]
