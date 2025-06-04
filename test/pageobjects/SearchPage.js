@@ -1,10 +1,10 @@
-import {$,browser,expect} from '@wdio/globals'
+import {$,browser,expect} from '@wdio/globals';
 class SearchPage{
 
     get searchInput()  {return $('//input[@id="searchAll"]');}
     get searchButton() {return $('//button[@type="submit"]');}
     get searchResultTitle() {return $('h1');}
-    get searchcount() {return $('.yu-z');}
+    get searchcount() {return $('.ut-z');}
 
    
     searchHistoryXbutton(searchItem){
