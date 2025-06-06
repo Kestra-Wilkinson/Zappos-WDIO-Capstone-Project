@@ -7,7 +7,7 @@ return $('//a[@data-shyguy="navWomen"]');}
 get NavWomenCloseWomensButton(){
 return $('//button[@aria-label="Close Women Menu"]');}
 get header() { return $('h1');}
-get resultcount(){return $('.yu-z');}
+get resultcount(){return $('.ot-z');}
 
 itemsandTerms = [
 {menuItem: "All Women's Shoes",resultName:" Women's Shoes"},
@@ -70,7 +70,7 @@ await this.NavWomenCloseWomensButton.click();
 async clickMenuOptionByText(linkText) {
 const link = await $("="+linkText);
 await expect(link).toHaveText(linkText);
-await link.waitForClickable({timeout:2000});    
+await link.waitForClickable({timeout:20000});    
 await link.click();
 
 }

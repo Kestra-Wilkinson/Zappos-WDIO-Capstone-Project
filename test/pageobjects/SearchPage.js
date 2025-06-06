@@ -4,7 +4,7 @@ class SearchPage{
     get searchInput()  {return $('//input[@id="searchAll"]');}
     get searchButton() {return $('//button[@type="submit"]');}
     get searchResultTitle() {return $('h1');}
-    get searchcount() {return $('.ut-z');}
+    get searchcount() {return $('.ot-z');}
 
    
     searchHistoryXbutton(searchItem){
